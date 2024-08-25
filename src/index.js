@@ -13,6 +13,7 @@ async function fetchWeather(url) {
     }
 
     const json = await response.json();
+    console.log(json);
   } catch (error) {
     console.error(error.message);
   }
