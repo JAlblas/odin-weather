@@ -16,8 +16,20 @@ async function fetchWeather(location) {
 }
 
 function parseData(json) {
-  return json.currentConditions;
+  const { temp, humidity, windspeed, winddir, precipprob } =
+    json.currentConditions;
+
+  const data = { temp, humidity, windspeed, winddir, precipprob };
+
+  return data;
 }
 
-const json = await fetchWeather("Rotterdam");
-console.log(parseData(json));
+const form = document.querySelector("form");
+const input = document.querySelector("#location");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  console.log("submit");
+  const json = await fetchWeather(input.value);
+  console.log(parseData(json));
+});
