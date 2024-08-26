@@ -1,5 +1,65 @@
-/* styles.css */
+:root {
+  --light-background: #fc6b3a;
+  --background: #d04530;
+  --dark-background: #471f00;
+  --white: #ffffff;
+  --transparent-white: rgba(255, 255, 255, 0.5);
+  --warning-green: #7eb356;
+  --warning-yellow: #f9c74f;
+  --warning-orange: #ed8607;
+  --warning-red: #f94144;
+}
+
+html {
+  height: 100vh;
+}
+
 body {
-  background-color: rgb(51, 82, 153);
+  background: linear-gradient(0deg, var(--light-background), var(--background));
   color: #fff;
+  font-family: "Roboto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.search-form {
+  justify-self: center;
+  height: 100px;
+  display: flex;
+}
+
+.search-form > * {
+  background-color: var(--dark-background);
+  height: 80px;
+  border: none;
+  font-size: 18px;
+  color: var(--white);
+  transition: border 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.location {
+  padding: 0 16px;
+  width: 256px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  border: 2px solid var(--dark-background);
+  border-right: none !important;
+  color: var(--white);
+}
+
+.location::placeholder {
+  color: #efefef;
+}
+
+.search {
+  cursor: pointer;
+  width: 52px;
+  height: 84px;
+  line-height: 1;
+  border-radius: 0 20px 20px 0;
+  border: 2px solid var(--dark-background);
+  border-left: none !important;
+  padding: 11px;
 }
