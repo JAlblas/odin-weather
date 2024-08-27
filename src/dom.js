@@ -12,13 +12,15 @@ function updateUI(data) {
   console.log(temperatureLabel);
   console.log(data);
 
-  temperatureLabel.textContent = data.temp;
-  precipitationLabel.textContent = data.precipprob;
-  humidityLabel.textContent = data.humidity;
-  windSpeedLabel.textContent = data.windspeed;
-  windDirectionLabel.textContent = data.winddir;
-  conditionsLabel.textContent = data.conditions;
-  //windDirectionLabel.textContent = data.icon;
+  addressLabel.textContent = data.resolvedAddress;
+  temperatureLabel.textContent = data.temp + " F";
+  precipitationLabel.textContent = "Precipitation: " + data.precip;
+  humidityLabel.textContent = "Humidity: " + data.humidity;
+  windSpeedLabel.textContent = "Wind speed: " + data.windspeed;
+  windDirectionLabel.textContent = "Wind direction: " + data.winddir;
+  conditionsLabel.textContent = "Conditions: " + data.conditions;
+  windDirectionLabel.textContent = data.icon;
+  datetimeLabel.textContent = data.datetime;
 }
 
 export { updateUI };

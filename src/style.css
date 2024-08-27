@@ -11,7 +11,7 @@
 }
 
 html {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
@@ -25,10 +25,10 @@ body {
 }
 
 #container {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(0px, 768px) 1fr;
-  grid-template-rows: 100px auto auto 100px;
+  grid-template-rows: 100px 150px 1fr 100px;
   grid-template-areas:
     "header header header"
     ". input ."
@@ -60,7 +60,7 @@ h1 {
 
 .search-form > * {
   background-color: var(--dark-background);
-  height: 80px;
+  height: 60px;
   border: none;
   font-size: 18px;
   color: var(--white);
@@ -86,12 +86,13 @@ h1 {
 .search {
   cursor: pointer;
   width: 52px;
-  height: 84px;
+  height: 64px;
   line-height: 1;
   border-radius: 0 20px 20px 0;
   border: 2px solid var(--dark-background);
   border-left: none !important;
   padding: 11px;
+  box-sizing: border-box;
 }
 
 #weather-info {
@@ -103,13 +104,63 @@ h1 {
   background-color: var(--dark-background);
   font-size: 18px;
   transition: border 0.3s;
+  max-height: 600px;
+  padding: 25px 50px;
   grid-area: weather;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "location location location"
+    " weather-icon conditions datetime"
+    "temperature . ."
+    "precipitation . humidity"
+    "windspeed . winddir";
+}
+
+#address {
+  font-size: 2em;
+  grid-area: location;
+  text-align: left;
+}
+
+#datetime {
+  grid-area: datetime;
+  text-align: right;
+}
+
+#current-weather-icon {
+  grid-area: weather-icon;
 }
 
 .weather-icon {
-  width: 100px;
-  height: 100px;
-  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+
+#temperature {
+  grid-area: temperature;
+  font-size: 3.5em;
+  margin: 0;
+}
+
+#conditions {
+  grid-area: conditions;
+}
+
+#precipitation {
+  grid-area: precipitation;
+}
+
+#humidity {
+  grid-area: humidity;
+}
+
+#wind-speed {
+  grid-area: windspeed;
+}
+#wind-direction {
+  grid-area: winddir;
 }
 
 #footer {
