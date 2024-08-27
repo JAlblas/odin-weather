@@ -4,6 +4,8 @@ const humidityLabel = document.querySelector("#humidity");
 const windSpeedLabel = document.querySelector("#wind-speed");
 const windDirectionLabel = document.querySelector("#wind-direction");
 const conditionsLabel = document.querySelector("#conditions");
+const datetimeLabel = document.querySelector("#datetime");
+const addressLabel = document.querySelector("#address");
 
 function updateUI(data) {
   console.log("Updating UI!");

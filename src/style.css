@@ -21,6 +21,7 @@ body {
   font-family: "Roboto", system-ui;
   font-weight: 400;
   font-style: normal;
+  margin: 0;
 }
 
 #container {
@@ -94,7 +95,21 @@ h1 {
 }
 
 #weather-info {
+  padding: 10px 25px;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid var(--dark-background);
+  color: var(--white);
+  background-color: var(--dark-background);
+  font-size: 18px;
+  transition: border 0.3s;
   grid-area: weather;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  color: #fff;
 }
 
 #footer {
