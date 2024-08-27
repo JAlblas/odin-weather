@@ -6,6 +6,7 @@ const windDirectionLabel = document.querySelector("#wind-direction");
 const conditionsLabel = document.querySelector("#conditions");
 const datetimeLabel = document.querySelector("#datetime");
 const addressLabel = document.querySelector("#address");
+const currentWeatherIcon = document.querySelector("#current-weather-icon");
 
 function updateUI(data) {
   console.log("Updating UI!");
@@ -19,8 +20,8 @@ function updateUI(data) {
   windSpeedLabel.textContent = "Wind speed: " + data.windspeed;
   windDirectionLabel.textContent = "Wind direction: " + data.winddir;
   conditionsLabel.textContent = "Conditions: " + data.conditions;
-  windDirectionLabel.textContent = data.icon;
   datetimeLabel.textContent = data.datetime;
+  currentWeatherIcon.src = require(`./img/${data.icon}.svg`);
 }
 
 export { updateUI };

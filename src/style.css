@@ -109,13 +109,13 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 2fr 2fr 2fr 1fr 1fr;
   grid-template-areas:
     "location location location"
     " weather-icon conditions datetime"
     "temperature . ."
-    "precipitation . humidity"
-    "windspeed . winddir";
+    "precipitation humidity ." /*// Chance of rain*/
+    "windspeed winddir ."; /*// cloud cover*/
 }
 
 #address {
@@ -126,7 +126,7 @@ h1 {
 
 #datetime {
   grid-area: datetime;
-  text-align: right;
+  text-align: center;
 }
 
 #current-weather-icon {
@@ -146,6 +146,7 @@ h1 {
 
 #conditions {
   grid-area: conditions;
+  text-align: left;
 }
 
 #precipitation {
