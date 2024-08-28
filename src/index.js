@@ -5,6 +5,7 @@ import "./style.css";
 
 const form = document.querySelector("form");
 const input = document.querySelector("#location");
+const loader = document.querySelector(".loader");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
