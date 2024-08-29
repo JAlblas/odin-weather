@@ -1,3 +1,5 @@
+const weatherInfo = document.querySelector("#weather-info");
+
 const temperatureLabel = document.querySelector("#temperature");
 const precipitationLabel = document.querySelector("#precipitation");
 const humidityLabel = document.querySelector("#humidity");
@@ -7,7 +9,6 @@ const conditionsLabel = document.querySelector("#conditions");
 const datetimeLabel = document.querySelector("#datetime");
 const addressLabel = document.querySelector("#address");
 const currentWeatherIcon = document.querySelector("#current-weather-icon");
-
 function updateUI(data) {
   console.log("Updating UI!");
   console.log(temperatureLabel);
@@ -24,4 +25,13 @@ function updateUI(data) {
   currentWeatherIcon.src = require(`./img/${data.icon}.svg`);
 }
 
-export { updateUI };
+function toggleLoadingIndicator(loader) {
+  const children = weatherInfo.children;
+
+  for (let i = 1; i < children.length; i++) {
+    children[i].classList.toggle("hidden");
+  }
+  loader.classList.toggle("visible");
+}
+
+export { updateUI, toggleLoadingIndicator };

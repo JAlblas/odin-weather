@@ -104,7 +104,7 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 0.8fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
+  grid-template-rows: auto 0.8fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
   grid-template-areas:
     "loader loader"
     "location location"
@@ -191,4 +191,12 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.visible {
+  display: initial;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,5 +1,5 @@
 import { fetchWeather, parseData } from "./api";
-import { updateUI } from "./dom";
+import { toggleLoadingIndicator, updateUI } from "./dom";
 
 import "./style.css";
 
@@ -15,6 +15,9 @@ form.addEventListener("submit", async (e) => {
   updateUI(data);
 });
 
+toggleLoadingIndicator(loader);
 const json = await fetchWeather("Copenhagen");
 const data = parseData(json);
 updateUI(data);
+
+toggleLoadingIndicator(loader);
