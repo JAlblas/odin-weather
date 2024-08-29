@@ -1,6 +1,6 @@
 async function fetchWeather(location) {
   try {
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=RT48PHEPXMEVLRTE97UTBCTR9`;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=RT48PHEPXMEVLRTE97UTBCTR9&unitGroup=metric`;
 
     const response = await fetch(url);
     if (!response.ok) {

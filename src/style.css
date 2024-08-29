@@ -23,12 +23,14 @@ body {
   min-height: 100%;
   display: grid;
   grid-template-columns: 1fr minmax(0px, 700px) 1fr;
-  grid-template-rows: 100px 150px 1fr 75px;
+  grid-template-rows: 80px 100px 1fr 1fr 75px;
   grid-template-areas:
     "header header header"
     ". input ."
     ". weather ."
+    ". forecast ."
     "footer footer footer";
+  row-gap: 25px;
 }
 
 #header {
@@ -104,7 +106,7 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.8fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
+  grid-template-rows: auto 0.5fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
   grid-template-areas:
     "loader loader"
     "location location"
@@ -119,6 +121,7 @@ h1 {
   font-size: 2em;
   grid-area: location;
   text-align: left;
+  margin-top: 20px;
   margin-bottom: 0px;
 }
 
@@ -199,4 +202,22 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+#weather-forecast {
+  grid-area: forecast;
+  padding: 10px 25px;
+  border-radius: 20px;
+  outline: none;
+  border: 2px solid var(--dark-background);
+  color: var(--white);
+  background-color: var(--dark-background);
+  font-size: 18px;
+  transition: border 0.3s;
+  max-height: 600px;
+  padding: 25px 50px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 0.8fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
 }

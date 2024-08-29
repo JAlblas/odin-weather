@@ -15,7 +15,7 @@ function updateUI(data) {
   console.log(data);
 
   addressLabel.textContent = data.resolvedAddress;
-  temperatureLabel.textContent = data.temp + " F";
+  temperatureLabel.textContent = data.temp + " °C";
   precipitationLabel.textContent = "Precipitation: " + data.precip;
   humidityLabel.textContent = "Humidity: " + data.humidity;
   windSpeedLabel.textContent = "Wind speed: " + data.windspeed;
