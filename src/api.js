@@ -25,7 +25,7 @@ function parseData(json) {
     conditions,
     datetime,
   } = json.currentConditions;
-  const { resolvedAddress } = json;
+  const { resolvedAddress, days } = json;
 
   const data = {
     resolvedAddress,
@@ -37,6 +37,7 @@ function parseData(json) {
     icon,
     conditions,
     datetime,
+    days,
   };
 
   return data;

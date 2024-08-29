@@ -1,4 +1,5 @@
 const weatherInfo = document.querySelector("#weather-info");
+const daysForecast = document.querySelector("#days");
 
 const temperatureLabel = document.querySelector("#temperature");
 const precipitationLabel = document.querySelector("#precipitation");
@@ -9,6 +10,7 @@ const conditionsLabel = document.querySelector("#conditions");
 const datetimeLabel = document.querySelector("#datetime");
 const addressLabel = document.querySelector("#address");
 const currentWeatherIcon = document.querySelector("#current-weather-icon");
+
 function updateUI(data) {
   console.log("Updating UI!");
   console.log(temperatureLabel);
@@ -34,4 +36,34 @@ function toggleLoadingIndicator(loader) {
   loader.classList.toggle("visible");
 }
 
-export { updateUI, toggleLoadingIndicator };
+function displayForecasts(days) {
+  days.forEach(function (day, index) {
+    if (index == 0 || index > 5) {
+      return;
+    }
+    console.log(day);
+    const div = document.createElement("div");
+    div.className = "forecast";
+
+    const date = document.createElement("p");
+    date.textContent = day.datetime;
+    div.appendChild(date);
+
+    const icon = document.createElement("img");
+    icon.className = "weather-icon";
+    icon.src = require(`./img/${day.icon}.svg`);
+    div.appendChild(icon);
+
+    const max = document.createElement("p");
+    max.textContent = day.tempmax;
+    div.appendChild(max);
+
+    const min = document.createElement("p");
+    min.textContent = day.tempmin;
+    div.appendChild(min);
+
+    daysForecast.appendChild(div);
+  });
+}
+
+export { updateUI, toggleLoadingIndicator, displayForecasts };

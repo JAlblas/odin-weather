@@ -106,7 +106,7 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.5fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
+  grid-template-rows: auto 0.4fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
   grid-template-areas:
     "loader loader"
     "location location"
@@ -143,8 +143,7 @@ h1 {
 
 #temperature {
   grid-area: temperature;
-  font-size: 4em;
-  margin: 10px 0;
+  font-size: 4.5em;
 }
 
 #conditions {
@@ -216,8 +215,15 @@ h1 {
   transition: border 0.3s;
   max-height: 600px;
   padding: 25px 50px;
+}
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.8fr 0.3fr 1fr 0.5fr 0.2fr 0.2fr;
+.forecast {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #fff;
+}
+
+.forecast img {
+  margin: 0;
 }
