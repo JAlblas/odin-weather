@@ -16,9 +16,11 @@ form.addEventListener("submit", async (e) => {
 async function refreshData(location) {
   toggleLoadingIndicator(loader);
   const json = await fetchWeather(location);
-  const data = parseData(json);
-  updateUI(data);
-  displayForecasts(data.days);
+  if (json != null) {
+    const data = parseData(json);
+    updateUI(data);
+    displayForecasts(data.days);
+  }
   toggleLoadingIndicator(loader);
 }
 

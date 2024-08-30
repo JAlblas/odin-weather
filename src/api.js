@@ -9,6 +9,7 @@ async function fetchWeather(location) {
     const json = await response.json();
     return json;
   } catch (error) {
+    alert("Something went wrong!");
     console.error(error.message);
   }
 }
