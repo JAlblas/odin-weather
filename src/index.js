@@ -9,8 +9,8 @@ const loader = document.querySelector(".loader");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
   refreshData(input.value);
+  input.value = "";
 });
 
 async function refreshData(location) {

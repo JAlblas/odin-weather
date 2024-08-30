@@ -12,10 +12,6 @@ const addressLabel = document.querySelector("#address");
 const currentWeatherIcon = document.querySelector("#current-weather-icon");
 
 function updateUI(data) {
-  console.log("Updating UI!");
-  console.log(temperatureLabel);
-  console.log(data);
-
   addressLabel.textContent = data.resolvedAddress;
   temperatureLabel.textContent = data.temp + " °C";
   precipitationLabel.textContent = "Precipitation: " + data.precip;
@@ -45,9 +41,14 @@ function displayForecasts(days) {
     const div = document.createElement("div");
     div.className = "forecast";
 
-    const date = document.createElement("p");
-    date.textContent = day.datetime;
-    div.appendChild(date);
+    const dateParagraph = document.createElement("p");
+    const dateString = new Date(day.datetime).toLocaleString("en-us", {
+      weekday: "long",
+    });
+
+    dateParagraph.textContent = dateString;
+    dateParagraph.className = "dayname";
+    div.appendChild(dateParagraph);
 
     const icon = document.createElement("img");
     icon.className = "weather-icon";
@@ -56,6 +57,7 @@ function displayForecasts(days) {
 
     const max = document.createElement("p");
     max.textContent = day.tempmax;
+    max.style.fontWeight = "bold";
     div.appendChild(max);
 
     const min = document.createElement("p");
