@@ -34,9 +34,12 @@ function toggleLoadingIndicator(loader) {
 
 function displayForecasts(days) {
   days.forEach(function (day, index) {
+    console.log(days);
+
     if (index == 0 || index > 5) {
       return;
     }
+    console.log(index);
     console.log(day);
     const div = document.createElement("div");
     div.className = "forecast";
