@@ -106,19 +106,19 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.4fr 0.3fr 0.5fr 0.4fr 0.15fr 0.15fr;
+  grid-template-rows: auto 0.4fr 0.4fr 2fr 0.4fr 0.15fr 0.15fr;
   grid-template-areas:
     "loader loader"
     "location location"
-    "datetime ."
-    "temperature weather-icon"
+    "datetime weather-icon"
+    "temperature temperature"
     "conditions conditions"
     "precipitation humidity" /*// Chance of rain*/
     "windspeed winddir"; /*// cloud cover*/
 }
 
 #address {
-  font-size: 2em;
+  font-size: 2.5em;
   grid-area: location;
   text-align: left;
   margin-top: 20px;
@@ -129,6 +129,7 @@ h1 {
   grid-area: datetime;
   text-align: left;
   font-weight: bold;
+  font-size: 0.9em;
 }
 
 #current-weather-icon {
@@ -146,6 +147,7 @@ h1 {
   grid-area: temperature;
   font-size: 4.5em;
   margin: 20px 0px;
+  margin: auto;
 }
 
 #conditions {

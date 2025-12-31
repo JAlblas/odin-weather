@@ -22,7 +22,7 @@ function updateUI(data) {
   windSpeedLabel.textContent = "Wind speed: " + data.windspeed;
   windDirectionLabel.textContent = "Wind direction: " + data.winddir;
   conditionsLabel.textContent = "Conditions: " + data.conditions;
-  datetimeLabel.textContent = data.datetime;
+  datetimeLabel.textContent = Date(data.datetime);
   currentWeatherIcon.src = require(`./img/${data.icon}.svg`);
 
   displayForecasts(data.days);
