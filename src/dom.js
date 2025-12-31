@@ -21,6 +21,8 @@ function updateUI(data) {
   conditionsLabel.textContent = "Conditions: " + data.conditions;
   datetimeLabel.textContent = data.datetime;
   currentWeatherIcon.src = require(`./img/${data.icon}.svg`);
+
+  displayForecasts(data.days);
 }
 
 function toggleLoadingIndicator(loader) {
@@ -33,14 +35,12 @@ function toggleLoadingIndicator(loader) {
 }
 
 function displayForecasts(days) {
-  days.forEach(function (day, index) {
-    console.log(days);
+  daysForecast.innerHTML = "";
 
+  days.forEach(function (day, index) {
     if (index == 0 || index > 5) {
       return;
     }
-    console.log(index);
-    console.log(day);
     const div = document.createElement("div");
     div.className = "forecast";
 

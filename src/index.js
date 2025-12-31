@@ -19,7 +19,6 @@ async function refreshData(location) {
   if (json != null) {
     const data = parseData(json);
     updateUI(data);
-    displayForecasts(data.days);
   }
   toggleLoadingIndicator(loader);
 }
