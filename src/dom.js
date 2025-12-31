@@ -11,8 +11,11 @@ const datetimeLabel = document.querySelector("#datetime");
 const addressLabel = document.querySelector("#address");
 const currentWeatherIcon = document.querySelector("#current-weather-icon");
 
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
 function updateUI(data) {
-  addressLabel.textContent = data.resolvedAddress;
+  addressLabel.textContent = capitalize(data.address);
+  console.log(data);
   temperatureLabel.textContent = data.temp + " °C";
   precipitationLabel.textContent = "Precipitation: " + data.precip;
   humidityLabel.textContent = "Humidity: " + data.humidity;

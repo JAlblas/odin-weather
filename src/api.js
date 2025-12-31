@@ -15,6 +15,7 @@ async function fetchWeather(location) {
 }
 
 function parseData(json) {
+  console.log(json);
   const {
     temp,
     humidity,
@@ -25,10 +26,10 @@ function parseData(json) {
     conditions,
     datetime,
   } = json.currentConditions;
-  const { resolvedAddress, days } = json;
+  const { address, days } = json;
 
   const data = {
-    resolvedAddress,
+    address,
     temp,
     humidity,
     windspeed,
