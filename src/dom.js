@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const weatherInfo = document.querySelector("#weather-info");
 const daysForecast = document.querySelector("#days");
 
@@ -16,15 +18,17 @@ const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 function updateUI(data) {
   addressLabel.textContent = capitalize(data.address);
   console.log(data);
-  temperatureLabel.textContent = data.temp + " °C";
+  temperatureLabel.textContent = data.temp + "°C";
   precipitationLabel.textContent = "Precipitation: " + data.precip;
   humidityLabel.textContent = "Humidity: " + data.humidity;
   windSpeedLabel.textContent = "Wind speed: " + data.windspeed;
   windDirectionLabel.textContent = "Wind direction: " + data.winddir;
   conditionsLabel.textContent = "Conditions: " + data.conditions;
-  datetimeLabel.textContent = Date(data.datetime);
+  datetimeLabel.textContent = format(
+    Date(data.datetimeEpoch),
+    "HH:mm:ss - yyyy-MM-dd",
+  );
   currentWeatherIcon.src = require(`./img/${data.icon}.svg`);
-
   displayForecasts(data.days);
 }
 

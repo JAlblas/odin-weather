@@ -25,11 +25,11 @@ function parseData(json) {
     icon,
     conditions,
     datetime,
+    datetimeEpoch,
   } = json.currentConditions;
   const { address, days } = json;
 
   const data = {
-    address,
     temp,
     humidity,
     windspeed,
@@ -38,7 +38,9 @@ function parseData(json) {
     icon,
     conditions,
     datetime,
+    address,
     days,
+    datetimeEpoch,
   };
 
   return data;

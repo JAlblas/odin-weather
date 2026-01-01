@@ -106,12 +106,12 @@ h1 {
   grid-area: weather;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 0.4fr 0.4fr 2fr 0.4fr 0.15fr 0.15fr;
+  grid-template-rows: auto 0.4fr 0.4fr 2fr 0.4fr 0.1fr 0.1fr;
   grid-template-areas:
     "loader loader"
     "location location"
-    "datetime weather-icon"
-    "temperature temperature"
+    "datetime ."
+    "temperature weather-icon"
     "conditions conditions"
     "precipitation humidity" /*// Chance of rain*/
     "windspeed winddir"; /*// cloud cover*/
@@ -134,6 +134,8 @@ h1 {
 
 #current-weather-icon {
   grid-area: weather-icon;
+  width: 120px;
+  height: 120px;
 }
 
 .weather-icon {
@@ -145,9 +147,8 @@ h1 {
 
 #temperature {
   grid-area: temperature;
-  font-size: 4.5em;
-  margin: 20px 0px;
-  margin: auto;
+  font-size: 5em;
+  margin: auto 0px;
 }
 
 #conditions {
@@ -239,4 +240,9 @@ h1 {
 
 .forecast .dayname {
   width: 150px;
+}
+
+.forecast p {
+  width: 50px;
+  margin: 0 auto;
 }
